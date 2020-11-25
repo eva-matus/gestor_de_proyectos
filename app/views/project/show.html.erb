@@ -1,0 +1,18 @@
+<h1>Proyectos</h1>
+
+<hr class="bg-dark">
+<ul class="list-unstyled">
+  <li class="media d-block">
+    <% @project.each do |project| %>
+      <div class="card-body">
+        <h2 class="card-title"><%= project.name%></h2>
+        <p class="card-text"><%= project.description%></p>
+        <p class="card-text"><%= project.start_date%></p>
+        <p class="card-text"><%= project.end_date%></p>
+        <p class="card-text"><%= project.state%></p>
+      </div>
+      <hr class="bg-dark">
+      <% end %>
+  </li>
+
+  <%= link_to 'Nuevo Proyecto', project_new_path %>

@@ -1,0 +1,39 @@
+<h1 class="text-center mt-4 mb-4"> Dashboard </h1>
+
+<form  id="filter">
+            <select name="state" class ="mb-5">
+                <option value="propuesta">Propuesta</option> 
+                <option value="en progreso">En progreso</option>
+                <option value="terminado">Terminado</option>
+                <input type="submit" value="Filtrar" class="ml-3 mr-3">
+                <%= link_to 'Refresh', project_dashboard_path %>
+            </select>
+</form>
+            
+            
+<table class = "table">
+
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Estado</th>
+      <th>Fecha de comienzo</th>
+      <th>Fecha de termino</th>
+
+    </tr>
+  <tbody>
+    <% @projects.each do |project| %>
+        <tr>
+            <td><%= project.id%></td>
+            <td><%= project.name%></td>
+            <td><%= project.description%></td>
+            <td><%= project.state%></td>
+            <td><%= project.start_date%></td>
+            <td><%= project.end_date%></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', project_new_path %>

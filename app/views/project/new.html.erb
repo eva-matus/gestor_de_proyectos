@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Gestor Proyectos</h1>
+    <form method="post" action="/project" id="create_project">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %> 
+        <div class="ml-5">
+            <h2>Nombre</h2>
+            <input name="name" class ="mb-3">
+            <h2>Descripción</h2>
+            <textarea name="description" class ="mb-3"> </textarea>
+            <h2>Fecha de comienzo</h2>
+            <input type="date" name="start_date" value="2020-08-20" class ="mb-3" >
+            <h2>Fecha de termino</h2>
+            <input type="date" name="end_date" value="2020-08-20" class ="mb-3">
+            <h2>Estado</h2>
+            <select name="state" class ="mb-5">
+                <option value="propuesta">Propuesta</option> 
+                <option value="en progreso">En progreso</option>
+                <option value="terminado">Terminado</option>
+            </select>
+        </div>
+        <input type="submit" value="Enviar" class="ml-5 ">
+        <div class="ml-5 mt-3 mb-5">
+        <%= link_to 'Ver Proyectos', project_show_path %>
+        </div>
+    </form>
+</div>
